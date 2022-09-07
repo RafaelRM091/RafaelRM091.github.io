@@ -1,0 +1,78 @@
+<form class="form mat-elevation-z8">
+    <h1>Atualizando Cliente</h1>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>CNPJ</mat-label>
+      <input [(ngModel)]="cliente.cnpj" [formControl]="cnpj" required name="cnpj" maxlength="18" matInput placeholder="Ex. 14.023.904/0001-48">
+      <mat-error *ngIf="cnpj.invalid">{{ errorValidCnpj() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>NOME</mat-label>
+        <input [(ngModel)]="cliente.nome" [formControl]="nome" required name="nome" maxlength="100" matInput placeholder="Ex. Automação Informática Riograndense">
+        <mat-error *ngIf="nome.invalid">{{ errorValidNome() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>CEP</mat-label>
+        <input [(ngModel)]="cliente.cep" name="cep" matInput placeholder="Ex. 91-030-480">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>TIPO</mat-label>
+        <input [(ngModel)]="cliente.tipo" name="tipo" matInput placeholder="Ex. Avenida/Rua">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>LOGRADOURO</mat-label>
+        <input [(ngModel)]="cliente.logradouro" [formControl]="logradouro" required name="logradouro" maxlength="50" matInput placeholder="Ex. Sertório">
+        <mat-error *ngIf="logradouro.invalid">{{ errorValidLogradouro() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>NÚMERO</mat-label>
+        <input [(ngModel)]="cliente.numero" [formControl]="numero" required name="numero" matInput maxlength="10" placeholder="Ex. 123">
+        <mat-error *ngIf="numero.invalid">{{ errorValidNumero() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>COMPLEMENTO</mat-label>
+        <input [(ngModel)]="cliente.complemento" name="complemento" matInput placeholder="Ex. Loja 19">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>BAIRRO</mat-label>
+        <input [(ngModel)]="cliente.bairro" [formControl]="bairro" required name="bairro" maxlength="100" matInput placeholder="Ex. Pq. São Sebastião">
+        <mat-error *ngIf="bairro.invalid">{{ errorValidBairro() }}</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>UF</mat-label>
+        <input [(ngModel)]="cliente.uf" name="uf" matInput placeholder="Ex. RS">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>MUNICIPIO</mat-label>
+        <input [(ngModel)]="cliente.municipio" name="municipio" matInput placeholder="Ex. Porto Alegre">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>EMAIL</mat-label>
+        <input [(ngModel)]="cliente.email" name="email" matInput placeholder="Ex. comercial@balancasriograndense.com.br">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>TELEFONE</mat-label>
+        <input [(ngModel)]="cliente.telefoneResidencial" [formControl]="telefoneResidencial" required name="telefoneResidencial" maxlength="18" matInput placeholder="Ex. (51)9 9999.999">
+        <mat-error *ngIf="telefoneResidencial.invalid">{{ errorValidTelefone() }}</mat-error>
+    </mat-form-field> 
+    
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>OBSERVAÇÃO</mat-label>
+        <textarea [(ngModel)]="cliente.obs" name="obs" matInput placeholder="Ex. Empresa próximo ao Atacadão Sertório"></textarea>
+    </mat-form-field>
+
+    <button class="mat-elevation-z8" (click)="update()" [disabled]="errorValidCnpj() || errorValidNome() || errorValidLogradouro() || errorValidNumero() || errorValidBairro() || errorValidTelefone()" mat-stroked-button color="green">ATUALIZAR</button>
+    <button class="mat-elevation-z8" (click)="cancel()" mat-stroked-button color="red">CANCELAR</button>
+</form>
+  

@@ -1,0 +1,26 @@
+.container {
+    width: 70%;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+#abertura {
+    text-align: end;
+}
+
+.mat-stroked-button.mat-green{
+    width: 100%;
+    margin-top: .5rem;
+    background-color: rgb(3, 104, 11);
+    color: white;
+}
+
+.mat-stroked-button.mat-red{
+    width: 100%;
+    margin-top: .2rem;
+    background-color: rgb(255, 0, 0);
+    color: white;
+ }

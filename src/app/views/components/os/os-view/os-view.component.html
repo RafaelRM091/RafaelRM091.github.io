@@ -1,0 +1,17 @@
+<div class="container" id="content" #content>
+    <h1>Relatório Ordem de Serviço</h1>
+    <mat-card class="mat-elevation-z8">
+        <p id="abertura">Data de Abertura: {{ os.dataAbertura }}</p>
+        <h1>OS: {{ os.id }}</h1>
+        <p>Nome Técnico: {{ os.tecnico }}</p>
+        <p>Nome Cliente: {{ os.cliente }}</p>
+        <p>Marca Balança: {{ os.balanca }}</p>
+        <p>N° Série: {{ os.serieBalanca }}</p>
+        <p>N° INMETRO: {{ os.inmetroBalanca }}</p>
+        <p>Defeito: {{ os.defeito }}</p>
+        <p>Solução: {{ os.solucao }}</p>
+        <p>Observação: {{ os.observacao }}</p>
+    </mat-card>
+    <button (click)="makePDF()" class="mat-elevation-z8" mat-stroked-button color="green">IMPRIMIR</button>
+    <button (click)="return()" class="mat-elevation-z8" mat-stroked-button color="red">VOLTAR</button>
+</div>

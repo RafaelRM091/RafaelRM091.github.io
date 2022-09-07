@@ -1,0 +1,72 @@
+  <form class="form mat-elevation-z8">
+    <h1>Criando Nova Ordem de Serviço</h1>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Selecione um técnico</mat-label>
+        <mat-select [(value)]="os.tecnico">
+            <mat-option *ngFor="let tec of tecnicos" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Selecione um cliente</mat-label>
+        <mat-select [(value)]="os.cliente">
+            <mat-option *ngFor="let cli of clientes" value="{{ cli.id }}">{{ cli.nome }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Selecione uma balança</mat-label>
+        <mat-select [(value)]="os.balanca">
+          <mat-option *ngFor="let bal of balancas" value="{{ bal.id }}"> {{ bal.marca }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Selecione um status</mat-label>
+        <mat-select [(value)]="os.status">
+          <mat-option value="0">ABERTO</mat-option>
+          <mat-option value="1">EM ANDAMENTO</mat-option>
+          <mat-option value="2">ENCERRADO</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Selecione uma prioridade</mat-label>
+        <mat-select [(value)]="os.prioridade">
+          <mat-option value="0">BAIXA</mat-option>
+          <mat-option value="1">MEDIA</mat-option>
+          <mat-option value="2">ALTA</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>N° Série</mat-label>
+        <input  [(ngModel)]="os.serieBalanca" name="serieBalanca" matInput placeholder="123">
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>N° INMETRO</mat-label>
+        <input  [(ngModel)]="os.inmetroBalanca" name="inmetroBalanca" matInput placeholder="987">
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>DEFEITO</mat-label>
+        <input  [(ngModel)]="os.defeito" name="defeito" matInput placeholder="Não Liga">
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>SOLUÇÃO</mat-label>
+        <input  [(ngModel)]="os.solucao" name="solucao" matInput placeholder="Troca da placa fonte">
+      </mat-form-field>
+
+
+      <form class="form" class="full-width">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Adicione as Observações da Ordem de Serviço</mat-label>
+          <textarea [(ngModel)]="os.observacao" name="observacao" matInput maxLength="255"></textarea>
+        </mat-form-field>
+      </form>
+
+      <button (click)="create()" class="mat-elevation-z8" mat-stroked-button color="green">CRIAR</button>
+      <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="red">CANCELAR</button>
+  </form>  

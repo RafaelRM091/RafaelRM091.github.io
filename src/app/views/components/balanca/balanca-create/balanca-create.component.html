@@ -1,0 +1,33 @@
+<form class="form mat-elevation-z8">
+    <h1>Criando Nova Balança</h1>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>MARCA</mat-label>
+      <input [(ngModel)]="balanca.marca" [formControl]="marca" required name="marca" matInput placeholder="Ex. Toledo/ Balmak">
+      <mat-error *ngIf="marca.invalid">{{ errorValidMarca() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>MODELO</mat-label>
+        <input [(ngModel)]="balanca.modelo" name="modelo" matInput placeholder="Ex. PRIX, ORION">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>ANO FABRICAÇÃO</mat-label>
+      <input [(ngModel)]="balanca.anoFabricacao" name="anoFabricacao" matInput placeholder="Ex. 2022">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>CAPACIDADE(Kg)</mat-label>
+        <input [(ngModel)]="balanca.capacidade" [formControl]="capacidade" required name="capacidade" matInput placeholder="Ex. 30">
+        <mat-error *ngIf="capacidade.invalid">{{ errorValidCapacidade() }}</mat-error>
+      </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>DIVISÃO(g)</mat-label>
+        <input [(ngModel)]="balanca.divisao" name="divisao" matInput placeholder="Ex. 5/10">
+    </mat-form-field>
+
+    <button (click)="create()" [disabled]="errorValidMarca() || errorValidCapacidade()" class="mat-elevation-z8" mat-stroked-button color="green">CRIAR</button>
+    <button (click)="cancel()" class="mat-elevation-z8" mat-stroked-button color="red">CANCELAR</button>
+</form>
+  

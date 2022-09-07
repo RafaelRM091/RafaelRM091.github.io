@@ -1,0 +1,48 @@
+.create {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.mat-flat-button.mat-green{
+    background-color: rgb(3, 104, 11);
+    color: white;
+ }
+
+.mat-elevation-z8 {    
+    overflow-x: auto;
+}
+
+.create h1 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.create button {
+    width: 100%;
+    margin: 1rem auto;
+}
+
+.container {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.filter {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+table {
+    width: 100%;
+}
+
+#edit {
+    color: rgb(1, 151, 1);
+}
+
+#delete {
+    color: rgb(255, 0, 0);
+}

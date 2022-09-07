@@ -1,0 +1,72 @@
+<form class="form mat-elevation-z8">
+    <h1>Deletando Cliente</h1>
+
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>CNPJ</mat-label>
+      <input disabled [(ngModel)]="cliente.cnpj" name="cnpj" maxlength="18" matInput placeholder="Ex. 14.023.904/0001-48">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>NOME</mat-label>
+        <input disabled [(ngModel)]="cliente.nome" name="nome" maxlength="100" matInput placeholder="Ex. Automação Informática Riograndense">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>CEP</mat-label>
+        <input disabled [(ngModel)]="cliente.cep" name="cep" matInput placeholder="Ex. 91-030-480">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>TIPO</mat-label>
+        <input disabled [(ngModel)]="cliente.tipo" name="tipo" matInput placeholder="Ex. Avenida/Rua">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>LOGRADOURO</mat-label>
+        <input disabled [(ngModel)]="cliente.logradouro" name="logradouro" maxlength="50" matInput placeholder="Ex. Sertório">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>NÚMERO</mat-label>
+        <input disabled [(ngModel)]="cliente.numero" name="numero" matInput maxlength="10" placeholder="Ex. 123">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>COMPLEMENTO</mat-label>
+        <input disabled [(ngModel)]="cliente.complemento" name="complemento" matInput placeholder="Ex. Loja 19">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>BAIRRO</mat-label>
+        <input disabled [(ngModel)]="cliente.bairro" name="bairro" maxlength="100" matInput placeholder="Ex. Pq. São Sebastião">
+    </mat-form-field>
+    
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>UF</mat-label>
+        <input disabled [(ngModel)]="cliente.uf" name="uf" matInput placeholder="Ex. RS">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>MUNICIPIO</mat-label>
+        <input disabled [(ngModel)]="cliente.municipio" name="municipio" matInput placeholder="Ex. Porto Alegre">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>EMAIL</mat-label>
+        <input disabled [(ngModel)]="cliente.email" name="email" matInput placeholder="Ex. comercial@balancasriograndense.com.br">
+    </mat-form-field>
+
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>TELEFONE</mat-label>
+        <input disabled [(ngModel)]="cliente.telefoneResidencial" name="telefoneResidencial" maxlength="18" matInput placeholder="Ex. (51)9 9999.999">
+    </mat-form-field> 
+    
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>OBSERVAÇÃO</mat-label>
+        <textarea disabled [(ngModel)]="cliente.obs" name="obs" matInput placeholder="Ex. Empresa próximo ao Atacadão Sertório"></textarea>
+    </mat-form-field>
+
+    <button class="mat-elevation-z8" (click)="delete()" mat-stroked-button color="green">DELETAR</button>
+    <button class="mat-elevation-z8" (click)="cancel()" mat-stroked-button color="red">CANCELAR</button>
+</form>
+  

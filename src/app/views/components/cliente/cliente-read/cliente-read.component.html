@@ -1,0 +1,78 @@
+<div class="create">
+    <h1>Clientes</h1>
+    <button (click)="navigateToCreate()" class="mat-elevation-z8" mat-flat-button color="green">CRIAR NOVO CLIENTE</button>
+
+    
+   <mat-form-field class="filter" appearance="standard">
+    <mat-label>Filtrar</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>
+
+</div>
+  
+  
+  <div class="mat-elevation-z8 container">
+      <table mat-table [dataSource]="dataSource" matSort>
+    
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="cnpj">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> CNPJ </th>
+          <td mat-cell *matCellDef="let element"> {{element.cnpj}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> NOME </th>
+          <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+        </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> TIPO </th>
+            <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+          </ng-container>
+    
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="logradouro">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> ENDEREÇO </th>
+            <td mat-cell *matCellDef="let element"> {{element.logradouro}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="numero">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> N° </th>
+            <td mat-cell *matCellDef="let element"> {{element.numero}} </td>
+          </ng-container>
+
+
+           <!-- Symbol Column -->
+           <ng-container matColumnDef="telefoneResidencial">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> TELEFONE </th>
+            <td mat-cell *matCellDef="let element"> {{element.telefoneResidencial}} </td>
+          </ng-container>
+    
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Ações </th>
+          <td mat-cell *matCellDef="let element"> 
+            <a routerLink="update/{{ element.id }}">
+              <i id="edit" class="material-icons">edit</i>
+            </a>
+            <a routerLink="delete/{{ element.id }}">
+              <i id="delete" class="material-icons">delete</i>
+            </a>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <mat-paginator mat-elevation-z8 container [pageSizeOptions]="[1, 2, 5, 10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+    </div>
+    
